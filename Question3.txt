@@ -1,0 +1,7 @@
+I believe that developing a user guide and a detailed video tutorial would be the best way to enable
+the coaching staff to access the data analysis results. I would start by writing a step-by-step
+user guide that shows how to execute the script. It would indicate where to input specific parameters
+and explain how to interpret the results. I plan on including screeshots or just a screenshare while 
+the recording is playing. In addition to the video tutorial, I would create an automated script to
+simplify the process further. One way to achieve this could be to createa a configuration file so the 
+coaching stagg could simply input their desired parameters so they wouldnt have to navigate the script.
