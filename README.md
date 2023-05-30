@@ -1,26 +1,36 @@
-#Data Analysis of CSGO Match: EvilGeniusProblem
+# CS:GO Match Data Analysis
 
-This repository contains the analysis of Counter-Strike: Global Offensive (CS:GO) matches. 
+This project is about analyzing Counter-Strike: Global Offensive (CS:GO) match data to find out insights about team strategies and weapon choices.
 
-The analysis is carried out through a Python class, ProcessGameState, which provides a flexible and efficient solution for handling game state data.
+## Prerequisites
 
-ProcessGameState Class
-The class handles the following tasks:
+The script requires the following Python packages:
 
-File ingestion and ETL: It manages the loading and transformation of match data.
+- pandas
+- argparse
+- shapely
+- matplotlib
+- seaborn
+- numpy
 
-Boundary Check: The class includes a function to determine whether each data row (representing a player's position) falls within a provided boundary. The function has been designed to be highly efficient and minimize runtime.
+## Files
 
-Weapon Class Extraction: It parses the inventory JSON column to extract weapon classes.
+- `main.py`: The main script to run.
 
-Analysis Performed
-Using the ProcessGameState class, we answer several key questions about game strategy:
+## Class: ProcessGameState
 
-Team2 T-side Strategy: Determine if entering via a specific boundary is a common strategy used by Team2 when they are on the Terrorist (T) side.
+The class `ProcessGameState` in `main.py` is responsible for handling the data analysis. Its features include:
 
-Average Entry Time: Calculate the average timer that Team2, on T side, enters "BombsiteB" with at least 2 rifles or SMGs.
+- File ingestion and ETL
+- Checking whether or not each row falls within a provided boundary
+- Extracting the weapon classes from the inventory JSON column
+- Analyzing team strategies based on entries through a specific boundary
+- Calculating the average timer for a team entering a specific bombsite with at least two rifles or SMGs
+- Plotting a heatmap to visualize player locations
 
-Team2 CT-side Strategy: Investigate Team2's Counter-Terrorist (CT) side strategy, specifically their waiting positions inside "BombsiteB". This includes a heatmap visualization.
+## Execution
 
-Non-Technical Stakeholders Support
-Most of our stakeholders, such as the CS:GO coaching staff, aren't tech-savvy enough to run the code themselves. Therefore, we propose a solution that allows our coaching staff to request or acquire the output themselves with minimal technical knowledge. This solution is expected to be implemented in less than a week.
+The script can be executed via command line using the following command:
+
+```shell
+python main.py --filepath YOUR_FILE_PATH --z_bounds 'lower,upper' --xy_polygon 'x1,y1 x2,y2 x3,y3'
